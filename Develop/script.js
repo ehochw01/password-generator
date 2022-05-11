@@ -29,7 +29,9 @@ function passwordPrompt() {
   } else {
     criteria.length = length;
   }
+
   var atLeastOneCharacterTypeSelected = false;
+   // at least one character type muse be created
   while (!atLeastOneCharacterTypeSelected){
       //confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
     if (confirm("Do you want to include lowercase characters?")) {
@@ -58,8 +60,31 @@ function passwordPrompt() {
 }
 
 function generatePassword(passCriteria) {
+  console.log(passCriteria);
+  var charSet = "";
+  const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+  const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const numbers = '123456789';
+  var specialFirstpart = ' !"#$%&'
+  var specialSecondpart = "')*+,-./:;<=>?@[\]^_`{|}~"
+  const special =  specialFirstpart + specialSecondpart;
+
+  // create a string that contains the set of possible characters for password based on user-confirmed criteria
+  if (passCriteria.lowercase) {
+    charSet += lowerCase;
+  }
+  if (passCriteria.uppercase) {
+    charSet += upperCase;
+  }
+  if (passCriteria.numeric) {
+    charSet += numbers;
+  }
+  if (passCriteria.special) {
+    charSet += special;
+  }
+
+  console.log(charSet);
 
 
-  // at least one character type muse be created
+
 }
-
