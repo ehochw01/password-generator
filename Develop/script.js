@@ -62,6 +62,7 @@ function generatePassword(passCriteria) {
   const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
   const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const numbers = '123456789';
+  // weird things were happening with the quotation marks so needed to concatenate 
   var specialFirstpart = ' !"#$%&';
   var specialSecondpart = "')*+,-./:;<=>?@[\]^_`{|}~";
   const special =  specialFirstpart + specialSecondpart;
